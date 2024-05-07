@@ -97,3 +97,11 @@ enum EventTypeFlag {
 	Shop = 1 << 2,
 	Dialogue = 1 << 3,
 }
+
+## Enums to be used as flags representing the differnt areas of the tree [br]
+enum TreeAreaFlag {
+	None = 0,
+	Roots = 1 << 0,
+	Trunk = 1 << 1,
+	Canopy = 1 << 2,
+}
