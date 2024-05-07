@@ -88,3 +88,12 @@ enum EventType {
 	Shop,
 	Dialogue,
 }
+
+## Enums to be used as flags representing the different types of events [br]
+enum EventTypeFlag {
+	None = 0,
+	Heal = 1 << 0,
+	Mob = 1 << 1,
+	Shop = 1 << 2,
+	Dialogue = 1 << 3,
+}
