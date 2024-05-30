@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://sg1wi7uqvv25"]
+[gd_scene load_steps=16 format=3 uid="uid://sg1wi7uqvv25"]
 
 [ext_resource type="Script" path="res://#Scenes/SceneScripts/TestingScene.gd" id="1_nmgwp"]
 [ext_resource type="PackedScene" uid="uid://bcpmrmofcilbn" path="res://Core/Battler.tscn" id="2_e6pjn"]
 [ext_resource type="Script" path="res://Managers/MapManager.gd" id="3_fnmf8"]
 [ext_resource type="PackedScene" uid="uid://clmg3l3n28x38" path="res://Entity/Player/Player.tscn" id="4_ss8ob"]
 [ext_resource type="Script" path="res://#Scenes/SceneScripts/TestingScene_UIcontrol.gd" id="5_8ejph"]
+[ext_resource type="Script" path="res://UI/Background.gd" id="6_duho6"]
 [ext_resource type="PackedScene" uid="uid://dpjfy4pv0vxst" path="res://Cards/CardContainer.tscn" id="6_dwemq"]
 [ext_resource type="Script" path="res://UI/EndTurnButton.gd" id="7_sxid7"]
 [ext_resource type="Texture2D" uid="uid://bl5v3bgnntoc5" path="res://Art/Card_layout/energy_count.png" id="8_tfcxf"]
@@ -38,6 +39,17 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("5_8ejph")
+
+[node name="Background" type="ParallaxBackground" parent="CanvasLayer/UIControl" node_paths=PackedStringArray("background_texture")]
+script = ExtResource("6_duho6")
+background_texture = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/UIControl/Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="CardContainer" parent="CanvasLayer/UIControl" node_paths=PackedStringArray("draw_pile_ui", "discard_pile_ui") instance=ExtResource("6_dwemq")]
 layout_mode = 1
