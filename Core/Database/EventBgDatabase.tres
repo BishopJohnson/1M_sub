@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="EventBackgroundDatabase" load_steps=2 format=3 uid="uid://xhdrnedq6qxs"]
+
+[ext_resource type="Script" path="res://Core/Database/EventBackgroundDatabase.gd" id="1_bl30f"]
+
+[resource]
+script = ExtResource("1_bl30f")
+background_resources = Array[Resource("res://UI/EventBackgroundResource.gd")]([])

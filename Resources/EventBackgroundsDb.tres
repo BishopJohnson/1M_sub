@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EventBackgroundDatabase" load_steps=6 format=3 uid="uid://bbohqfylejh7e"]
+
+[ext_resource type="Script" path="res://Core/Database/EventBackgroundDatabase.gd" id="1_8jml8"]
+[ext_resource type="Resource" uid="uid://cxakyg186hgwc" path="res://Resources/EventBackgrounds/TestBackground1.tres" id="1_ebhps"]
+[ext_resource type="Resource" uid="uid://cdmwua8bpdm84" path="res://Resources/EventBackgrounds/TestBackground2.tres" id="2_fxhmw"]
+[ext_resource type="Resource" uid="uid://di12r10rg4t7b" path="res://Resources/EventBackgrounds/TestBackground3.tres" id="3_35bfu"]
+[ext_resource type="Resource" uid="uid://cej0y35xjxaqp" path="res://Resources/EventBackgrounds/TestBackground4.tres" id="4_hict4"]
+
+[resource]
+script = ExtResource("1_8jml8")
+background_resources = Array[Resource("res://UI/EventBackground.gd")]([ExtResource("1_ebhps"), ExtResource("2_fxhmw"), ExtResource("3_35bfu"), ExtResource("4_hict4")])

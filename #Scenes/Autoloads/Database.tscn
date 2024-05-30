@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://5ud2rf0h2l6e"]
+
+[ext_resource type="Script" path="res://Core/Database/Database.gd" id="1_lywb7"]
+[ext_resource type="Resource" uid="uid://bbohqfylejh7e" path="res://Resources/EventBackgroundsDb.tres" id="2_4wyr2"]
+
+[node name="Database" type="Node"]
+script = ExtResource("1_lywb7")
+backgrounds = ExtResource("2_4wyr2")
