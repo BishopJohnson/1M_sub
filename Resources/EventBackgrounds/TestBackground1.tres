@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EventBackground" load_steps=3 format=3 uid="uid://cxakyg186hgwc"]
+
+[ext_resource type="Script" path="res://UI/EventBackground.gd" id="1_ir72q"]
+[ext_resource type="Texture2D" uid="uid://dfrnrdkpn3mon" path="res://Art/Background/test_bg_1.png" id="2_erwiq"]
+
+[resource]
+resource_name = "Test Background 1"
+script = ExtResource("1_ir72q")
+texture = ExtResource("2_erwiq")
+allowed_areas = Array[int]([7])
+allowed_events = Array[int]([2])
