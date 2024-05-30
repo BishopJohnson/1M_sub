@@ -101,7 +101,18 @@ enum EventTypeFlag {
 ## Enums to be used as flags representing the differnt areas of the tree [br]
 enum TreeAreaFlag {
 	None = 0,
-	Roots = 1 << 0,
-	Trunk = 1 << 1,
-	Canopy = 1 << 2,
+	RootsBeginning = 1 << 0,
+	RootsMiddle = 1 << 1,
+	RootsEnd = 1 << 2,
+	TrunkBeginning = 1 << 3,
+	TrunkMiddle = 1 << 4,
+	TrunkEnd = 1 << 5,
+	CanopyBeginning = 1 << 6,
+	CanopyMiddle = 1 << 7,
+	CanopyEnd = 1 << 8,
+	
+	Roots = RootsBeginning | RootsMiddle | RootsEnd,
+	Trunk = TrunkBeginning | TrunkMiddle | TrunkEnd,
+	Canopy = CanopyBeginning | CanopyMiddle | CanopyEnd,
+	All = Roots | Trunk | Canopy,
 }
