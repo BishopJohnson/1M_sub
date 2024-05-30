@@ -89,7 +89,7 @@ enum EventType {
 	Dialogue,
 }
 
-## Enums to be used as flags representing the different types of events [br]
+## Enums to be used as flags representing the different types of events.
 enum EventTypeFlag {
 	None = 0,
 	Heal = 1 << 0,
@@ -98,7 +98,7 @@ enum EventTypeFlag {
 	Dialogue = 1 << 3,
 }
 
-## Enums to be used as flags representing the differnt areas of the tree [br]
+## Enums to be used as flags representing the differnt areas of the tree.
 enum TreeAreaFlag {
 	None = 0,
 	RootsBeginning = 1 << 0,
@@ -111,8 +111,15 @@ enum TreeAreaFlag {
 	CanopyMiddle = 1 << 7,
 	CanopyEnd = 1 << 8,
 	
+	## Represents all areas in the tree roots.
 	Roots = RootsBeginning | RootsMiddle | RootsEnd,
+	
+	## Represents all areas in the the trunk.
 	Trunk = TrunkBeginning | TrunkMiddle | TrunkEnd,
+	
+	## Represents all areas in the tree canopy.
 	Canopy = CanopyBeginning | CanopyMiddle | CanopyEnd,
+	
+	## Represents all areas in the tree.
 	All = Roots | Trunk | Canopy,
 }
