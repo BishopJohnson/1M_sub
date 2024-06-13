@@ -8,10 +8,22 @@ class_name Background
 #region Node
 
 func _ready() -> void:
-	# TODO: Get area based on whichever manager has that data.
-	var area: GlobalEnums.TreeAreaFlag = GlobalEnums.TreeAreaFlag.All
-	var bg: EventBackground = GlobalDatabase.backgrounds.next_combat_bg(area)
-	background_texture.texture = bg.texture
+	var floor: int = PlayerManager.player_position[1]
+	
+	if not MapManager.map_area_dictionary.has(floor):
+		printerr("The floor ", floor, " does not have an associated tree area")
+		return
+	
+	var area: GlobalEnums.TreeAreaFlag = MapManager.map_area_dictionary[floor]
+	var event_type: GlobalEnums.EventTypeFlag = SceneManager.current_event
+	var database: EventBackgroundDatabase = GlobalDatabase.backgrounds
+	
+	match event_type:
+		GlobalEnums.EventTypeFlag.Mob:
+			background_texture.texture = database.next_combat_bg(area).texture
+		_:
+			# TODO: Get backgrounds that are specific to the area and event.
+			background_texture.texture = database.get_backgrounds()[0].texture
 
 
 #endregion Node
