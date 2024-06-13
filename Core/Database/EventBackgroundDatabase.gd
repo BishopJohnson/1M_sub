@@ -9,7 +9,7 @@ var _backgrounds: Dictionary = {}
 var _combat_bg_queue: Array[EventBackground] = []
 
 ## Gets all backgrounds loaded into this database.
-func get_backgrounds() -> Array[EventBackground]:
+func get_backgrounds() -> Array:
 	return _backgrounds.values()
 
 
