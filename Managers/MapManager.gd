@@ -26,6 +26,8 @@ var current_map: MapBase
 ## - Width should be odd (for symmetry + padding reason) [br]
 ## - Width should not increase or decrease by more than 2 per floor (this makes it certain all rooms on the map are accessible [br]
 var map_width_array: Array[int]
+## A dictionary containing the tree area associated with each floor.
+var map_area_dictionary: Dictionary
  
 #map_floors_width changes the width of the map's floors
 ## Generates and Populates a map with rooms that have random room types. More in depth algorithms will be added in the future
@@ -65,11 +67,26 @@ func create_map(map_floors_width: Array[int] = map_width_array) -> MapBase:
 	_map.rooms = _grid
 	return _map as MapBase
 
-
 ## Create a map with a width array
 
 func _ready() -> void:
 	map_width_array = [1, 3, 5, 7, 9, 11, 9, 7, 5, 3, 1]
+	# TODO: These flags ought to be fields on the rooms themselves, if the map
+	#       creation process is able to handle it dynamically to avoid making
+	#       these properties hard-coded.
+	map_area_dictionary = {
+		0: GlobalEnums.TreeAreaFlag.RootsBeginning,
+		1: GlobalEnums.TreeAreaFlag.RootsMiddle,
+		2: GlobalEnums.TreeAreaFlag.RootsMiddle,
+		3: GlobalEnums.TreeAreaFlag.RootsEnd,
+		4: GlobalEnums.TreeAreaFlag.TrunkBeginning,
+		5: GlobalEnums.TreeAreaFlag.TrunkMiddle,
+		6: GlobalEnums.TreeAreaFlag.TrunkMiddle,
+		7: GlobalEnums.TreeAreaFlag.TrunkEnd,
+		8: GlobalEnums.TreeAreaFlag.CanopyBeginning,
+		9: GlobalEnums.TreeAreaFlag.CanopyMiddle,
+		10: GlobalEnums.TreeAreaFlag.CanopyEnd,
+	}
 	current_map = create_map()
 
 
