@@ -1,6 +1,8 @@
 extends Node
 
 var current_scene: Node = null
+## Represents the type of event that the player is currently in.
+var current_event: GlobalEnums.EventTypeFlag
 
 func _ready() -> void:
 	var root: Node = get_tree().root
@@ -56,10 +58,25 @@ func goto_scene_map(event: EventBase, selection: int) -> void:
 		actual_event = EventRandom.choose_other_event()
 	var event_type_name: String = actual_event.get_event_name()
 	# go search the scene of the given event with the given selection
-	var path: String = "res://#Scenes/Events/%s/%d.tscn" % [event_type_name, selection] 
-
-	call_deferred("_deferred_goto_scene_map", actual_event, path)
+	var path: String = "res://#Scenes/Events/%s/%d.tscn" % [event_type_name, selection]
 	
+	# Sets the flag for which event type is loaded
+	match actual_event.get_script():
+		EventDialogue:
+			current_event = GlobalEnums.EventTypeFlag.Dialogue
+		EventHeal:
+			current_event = GlobalEnums.EventTypeFlag.Heal
+		EventMob:
+			current_event = GlobalEnums.EventTypeFlag.Mob
+		EventShop:
+			current_event = GlobalEnums.EventTypeFlag.Shop
+		_:
+			printerr("Unhandled event type")
+			current_event = GlobalEnums.EventTypeFlag.None
+	
+	call_deferred("_deferred_goto_scene_map", actual_event, path)
+
+
 ## Load the scene and start the event	
 func _deferred_goto_scene_map(event: EventBase, path: String) -> void:
 	_deferred_goto_scene(path)
