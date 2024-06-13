@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bvgmldqlys8fr"]
+[gd_scene load_steps=12 format=3 uid="uid://bvgmldqlys8fr"]
 
 [ext_resource type="Script" path="res://Dialog/EventDialogueWindow.gd" id="1_y8x42"]
+[ext_resource type="Script" path="res://UI/Background.gd" id="2_sfnne"]
 [ext_resource type="Texture2D" uid="uid://ube4dr03nn7e" path="res://Art/NPC/example-default.png" id="2_vyxv5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="3_sq1s4"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="4_2ecgp"]
@@ -71,6 +72,17 @@ Panel/styles/panel = SubResource("StyleBoxFlat_uy0d5")
 [node name="EventDialog" type="CanvasLayer"]
 layer = 100
 script = ExtResource("1_y8x42")
+
+[node name="Background" type="ParallaxBackground" parent="." node_paths=PackedStringArray("background_texture")]
+script = ExtResource("2_sfnne")
+background_texture = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
