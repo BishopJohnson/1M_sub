@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EventBackground" load_steps=3 format=3 uid="uid://cej0y35xjxaqp"]
 
 [ext_resource type="Script" path="res://UI/EventBackground.gd" id="1_dnyap"]
-[ext_resource type="Texture2D" uid="uid://m3ppcvpedp1i" path="res://Art/Background/test_bg_4.png" id="2_p4pwo"]
+[ext_resource type="Texture2D" uid="uid://m3ppcvpedp1i" path="res://Art/Background/0-0.test4.png" id="2_p4pwo"]
 
 [resource]
 resource_name = "Test Background 4"
