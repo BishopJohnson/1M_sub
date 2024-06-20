@@ -8,6 +8,12 @@ class_name EventBackgroundDatabase
 var _backgrounds: Dictionary = {}
 var _combat_bg_queue: Array[EventBackground] = []
 
+
+## Gets a background by its given key or null if no such background exists.
+func get_background(key: String) -> EventBackground:
+	return _backgrounds.get(key)
+
+
 ## Gets all backgrounds loaded into this database.
 func get_backgrounds() -> Array:
 	return _backgrounds.values()
