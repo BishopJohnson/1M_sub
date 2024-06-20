@@ -38,9 +38,9 @@ func next_combat_bg(area: GlobalEnums.TreeAreaFlag) -> EventBackground:
 	
 	while bg == null and i < _combat_bg_queue.size():
 		var curr_bg: EventBackground = _combat_bg_queue[i]
-		i += 1
 		
 		if not curr_bg.is_area_allowed(area):
+			i += 1
 			continue
 		
 		_combat_bg_queue.pop_at(i)
